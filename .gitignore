@@ -30,6 +30,8 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
+*/.angular/vite
+/.angular/vite
 */.angular/cache
 /.angular/cache
 .sass-cache/
