@@ -6,6 +6,7 @@ import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { provideStore, StoreModule } from '@ngrx/store';
 
 import { reducer as records } from './state/records/records.reducer';
+import { reducer as spinner } from './state/spinner/spinner.reducer';
 
 import { RecordsEffects } from './state/records/records.effects';
 import { environment } from '../environments/environment';
@@ -18,7 +19,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideStore({ records }),
+    provideStore({ records, spinner }),
     provideEffects([RecordsEffects]),
     !environment.production ? provideStoreDevtools({
       maxAge: 25, // Retains last 25 states

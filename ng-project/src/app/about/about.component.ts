@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { RecordsLoad } from '../state/records/records.actions';
 import { environment } from '../../environments/environment';
 import { Subscription } from 'rxjs';
+import { StartSpinner, StopSpinner } from '../state/spinner/spinner.actions';
 
 @Component({
   selector: 'app-about',
@@ -12,7 +13,6 @@ import { Subscription } from 'rxjs';
   styleUrl: './about.component.scss'
 })
 export class AboutComponent implements OnInit, OnDestroy {
-
   subscription: Subscription = new Subscription();
   
   constructor(
@@ -44,6 +44,17 @@ export class AboutComponent implements OnInit, OnDestroy {
     debugger;
     this.subscription.unsubscribe();
   }
+
+
+  spinnerClick(action: string) {
+    if (action === 'start') { 
+      this.store.dispatch(StartSpinner());
+    } else if(action === 'stop') {
+      this.store.dispatch(StopSpinner());
+    }
+  }
+
+
 
 
 
