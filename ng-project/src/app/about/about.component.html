@@ -2,4 +2,12 @@
 <p>about works!</p>
 <button type="button" (click)="spinnerClick('start')">start spinner</button>
 <button type="button" (click)="spinnerClick('stop')">stop spinner</button>
+
+<cds-button-set>
+  <button cdsButton="secondary" [size]="'md'" [isExpressive]="true">
+    Button
+  </button>
+  <button cdsButton [size]="'md'" [isExpressive]="true">Button</button>
+</cds-button-set>
+
 </div>

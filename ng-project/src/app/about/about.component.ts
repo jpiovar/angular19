@@ -5,10 +5,11 @@ import { RecordsLoad } from '../state/records/records.actions';
 import { environment } from '../../environments/environment';
 import { Subscription } from 'rxjs';
 import { StartSpinner, StopSpinner } from '../state/spinner/spinner.actions';
+import { ButtonModule } from 'carbon-components-angular';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [ButtonModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
